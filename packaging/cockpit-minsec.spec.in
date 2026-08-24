@@ -1,0 +1,44 @@
+Name:           cockpit-minsec
+Version:        @VERSION@
+Release:        @RELEASE@%{?dist}
+Summary:        Cockpit user interface for the minsec intrusion prevention daemon
+
+License:        GPL-3.0-or-later
+URL:            https://github.com/minsecio/cockpit-minsec
+Source0:        %{name}-%{version}.tar.xz
+
+BuildArch:      noarch
+BuildRequires:  make
+
+# The web assets are bundled ahead of time and shipped in the tarball, so no
+# network access or npm is needed at build time.
+Requires:       cockpit-bridge >= 266
+Recommends:     minsec
+
+%description
+A Cockpit page for minsec, a small log-driven intrusion prevention daemon.
+It shows what is currently blocked, which filters are watching which logs,
+and the daemon's event log; it can enable filters, test them against real
+log lines before enabling, edit policy and custom filters, block and unblock
+addresses by hand, and opt in to the crowd-sourced blocklist.
+
+%prep
+%autosetup -n %{name}-%{version}
+
+%build
+# Nothing to compile: dist/ is prebuilt in the tarball.
+
+%install
+install -d %{buildroot}%{_datadir}/cockpit/minsec
+cp -r dist/* %{buildroot}%{_datadir}/cockpit/minsec
+install -d %{buildroot}%{_datadir}/doc/%{name}
+install -m 0644 README.md %{buildroot}%{_datadir}/doc/%{name}/README.md
+
+%files
+%license LICENSE
+%doc %{_datadir}/doc/%{name}/README.md
+%{_datadir}/cockpit/minsec
+
+%changelog
+* Mon Aug 24 2026 minsec maintainers <hello@minsec.io> - @VERSION@-@RELEASE@
+- Initial package.

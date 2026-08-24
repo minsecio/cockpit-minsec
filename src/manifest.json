@@ -1,0 +1,26 @@
+{
+    "name": "minsec",
+    "requires": {
+        "cockpit": "266"
+    },
+    "menu": {
+        "index": {
+            "label": "Intrusion prevention",
+            "order": 45,
+            "keywords": [
+                {
+                    "matches": [
+                        "minsec", "intrusion", "prevention", "ban", "banned", "block",
+                        "blocklist", "fail2ban", "brute force", "bruteforce", "firewall",
+                        "nftables", "attack", "abuse", "filter", "jail", "security"
+                    ]
+                },
+                {
+                    "matches": ["crowd", "multiplayer", "threat intelligence", "sync", "report"],
+                    "goto": "#/multiplayer"
+                }
+            ]
+        }
+    },
+    "content-security-policy": "img-src 'self' data:"
+}

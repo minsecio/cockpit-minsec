@@ -1,0 +1,68 @@
+@import "@patternfly/patternfly/patternfly-base.css";
+@import "@patternfly/patternfly/patternfly-addons.css";
+
+.ct-minsec-header {
+    padding-block-end: var(--pf-t--global--spacer--sm);
+}
+
+.ct-stat-tile {
+    --pf-v6-c-card--BackgroundColor: transparent;
+
+    .ct-stat-value {
+        line-height: 1;
+    }
+
+    .ct-stat-unit {
+        font-size: var(--pf-t--global--font--size--md);
+        color: var(--pf-t--global--text--color--subtle);
+    }
+
+    .ct-stat-label {
+        color: var(--pf-t--global--text--color--regular);
+    }
+
+    .ct-stat-description {
+        font-size: var(--pf-t--global--font--size--xs);
+        color: var(--pf-t--global--text--color--subtle);
+    }
+}
+
+// Command output and validation errors: preserve the daemon's own line breaks.
+.ct-error-detail {
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: var(--pf-t--global--font--size--sm);
+    margin-block-start: var(--pf-t--global--spacer--xs);
+}
+
+.ct-config-editor {
+    font-family: var(--pf-t--global--font--family--mono);
+    font-size: var(--pf-t--global--font--size--sm);
+}
+
+// Raw log lines in the filter tester: never let one wrap the table open.
+.ct-log-line {
+    font-family: var(--pf-t--global--font--family--mono);
+    font-size: var(--pf-t--global--font--size--xs);
+    word-break: break-all;
+}
+
+.ct-path-list {
+    margin: 0;
+    padding-inline-start: var(--pf-t--global--spacer--md);
+    list-style: none;
+
+    li::before {
+        content: "";
+    }
+}
+
+.ct-help-body {
+    padding: 0 var(--pf-t--global--spacer--lg) var(--pf-t--global--spacer--lg);
+    overflow-y: auto;
+}
+
+.ct-help-button {
+    padding: 0;
+    vertical-align: baseline;
+}

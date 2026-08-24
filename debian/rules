@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+# dist/ is prebuilt in the source tarball; there is nothing to compile.
+override_dh_auto_build:
+
+override_dh_auto_install:
+	install -d debian/cockpit-minsec/usr/share/cockpit/minsec
+	cp -r dist/* debian/cockpit-minsec/usr/share/cockpit/minsec

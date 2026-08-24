@@ -1,0 +1,19 @@
+Source: cockpit-minsec
+Section: admin
+Priority: optional
+Maintainer: minsec maintainers <hello@minsec.io>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+Homepage: https://github.com/minsecio/cockpit-minsec
+Rules-Requires-Root: no
+
+Package: cockpit-minsec
+Architecture: all
+Depends: ${misc:Depends}, cockpit-bridge (>= 266)
+Recommends: minsec
+Description: Cockpit user interface for the minsec intrusion prevention daemon
+ A Cockpit page for minsec, a small log-driven intrusion prevention daemon.
+ It shows what is currently blocked, which filters are watching which logs,
+ and the daemon's event log; it can enable filters, test them against real
+ log lines before enabling, edit policy and custom filters, block and unblock
+ addresses by hand, and opt in to the crowd-sourced blocklist.
