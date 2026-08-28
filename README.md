@@ -4,7 +4,7 @@ A [Cockpit](https://cockpit-project.org/) page for
 [minsec](https://github.com/minsecio/minsec), a small log-driven intrusion
 prevention daemon.
 
-It gives minsec a web interface on any machine running Cockpit: what is
+It gives minsec a web interface on any machine running Cockpit: what's
 blocked right now, which filters are watching which logs, and why each ban
 happened — plus the controls to change all of it, and inline guidance drawn
 from minsec's manual pages so the answer is on the page rather than in
@@ -15,13 +15,13 @@ from minsec's manual pages so the answer is on the page rather than in
 | Page | |
 |---|---|
 | **Overview** | Service state and controls, live counters, enabled filters, recent activity, and multiplayer status. Warns when minsec is running but watching nothing, or when the backend is set to observe only. |
-| **Bans** | Active bans read from the kernel, with the filter that caused each one and its remaining lifetime. Block and unblock addresses or CIDRs by hand. |
+| **Bans** | Active bans read from the kernel, with the filter that caused it and its remaining lifetime. Block and unblock addresses or CIDRs by hand. |
 | **Filters** | Every built-in and custom filter with its patterns, log sources and effective policy. Enable or disable each one, and **test a filter against pasted log lines or a real log file** before turning it on. |
 | **Settings** | Guided editing of ban time, find time, retry limit, escalation, the allow list, the firewall backend and IPv6 aggregation — with a plain-language summary of what the policy actually means. Also edits the raw configuration files and custom filter definitions. |
-| **Multiplayer** | Opt in to crowd-sourced blocking, with the privacy terms stated up front. Shows enrollment, the size of the downloaded blocklist, and what is and is not transmitted. |
-| **Events** | The daemon's event log: every ban, unban, start and stop. |
+| **Multiplayer** | Opt in to crowd-sourced blocking. Shows enrollment, the size of the downloaded blocklist, and what is and will be sent. |
+| **Events** | The daemon's event log: ban, unban, start and stop. |
 
-Every change is validated with `minsec check` before it is accepted, and the
+Changes are validated with `minsec check` before accepting, and the
 page never leaves the service in a state where it would refuse to start
 without saying so.
 
@@ -104,13 +104,12 @@ make rpm      # needs rpm-build
 make deb      # needs dpkg-dev and debhelper
 ```
 
-The tarball ships the built `dist/` so distribution builds need neither npm
-nor network access, and `src/` alongside it so the package remains buildable
-from source.
+The tarball ships the built `dist/` so distribution builds don't need npm
+or network access, and `src/` so the package remains buildable from source.
 
 ## License
 
-GPL-3.0-or-later.
+GPL-3.0-or-later or LGPL-2.1-or-later.
 
 `src/lib/superuser.js` is taken from the Cockpit project and is
 LGPL-2.1-or-later; see `debian/copyright`.
