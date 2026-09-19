@@ -111,5 +111,5 @@ or network access, and `src/` so the package remains buildable from source.
 
 GPL-3.0-or-later or LGPL-2.1-or-later.
 
-`src/lib/superuser.js` is taken from the Cockpit project and is
+`src/lib/superuser.js` and `src/lib/cockpit-dark-theme.js` are taken from the Cockpit project and are
 LGPL-2.1-or-later; see `debian/copyright`.

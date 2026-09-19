@@ -8,6 +8,7 @@ import {
 } from '@patternfly/react-core';
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 import cockpit from 'cockpit';
+import './lib/cockpit-dark-theme'; // once per page
 import { superuser } from './lib/superuser';
 
 import { topics } from './help.jsx';
