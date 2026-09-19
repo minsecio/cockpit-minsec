@@ -26,3 +26,7 @@
 /noarch/
 /x86_64/
 /aarch64/
+
+# Screenshots are published to the gh-pages branch, not kept in history
+/screenshots/light/
+/screenshots/dark/

@@ -10,6 +10,30 @@ happened — plus the controls to change all of it, and inline guidance drawn
 from minsec's manual pages so the answer is on the page rather than in
 `man minsec.toml`.
 
+## At a glance
+
+Screenshots use invented data on a private test machine.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://minsecio.github.io/cockpit-minsec/dark/01-overview.png">
+  <img alt="Overview: service state, live counters, enabled filters and recent bans" src="https://minsecio.github.io/cockpit-minsec/light/01-overview.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://minsecio.github.io/cockpit-minsec/dark/03-bans.png">
+  <img alt="Bans: every network the kernel is blocking, which filter caught it and when it unblocks" src="https://minsecio.github.io/cockpit-minsec/light/03-bans.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://minsecio.github.io/cockpit-minsec/dark/06-filters-test.png">
+  <img alt="Filters: testing the sshd filter against pasted log lines before enabling it" src="https://minsecio.github.io/cockpit-minsec/light/06-filters-test.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://minsecio.github.io/cockpit-minsec/dark/09-multiplayer.png">
+  <img alt="Multiplayer: enrollment state and the size of the crowd blocklist" src="https://minsecio.github.io/cockpit-minsec/light/09-multiplayer.png">
+</picture>
+
 ## What it does
 
 | Page | |
@@ -63,6 +87,13 @@ make check            # build, then run the test suite
 rebuild is picked up by reloading the browser. Remove it with
 `make devel-uninstall`.
 
+The screenshots in this README are generated, not captured by hand:
+`screenshots/tools/make-shots.sh` serves a build with a fake minsec backend
+through a throwaway local Cockpit session and photographs every page in
+both themes, and `screenshots/tools/publish.sh` quantizes the result and
+force-pushes it as the single commit of the `gh-pages` branch. The images
+never enter the main history.
+
 The stack is the Cockpit
 [starter-kit](https://github.com/cockpit-project/starter-kit) standard:
 React 18, PatternFly 6 and esbuild. There is no build step at runtime; the
@@ -111,5 +142,5 @@ or network access, and `src/` so the package remains buildable from source.
 
 GPL-3.0-or-later or LGPL-2.1-or-later.
 
-`src/lib/superuser.js` is taken from the Cockpit project and is
+`src/lib/superuser.js` and `src/lib/cockpit-dark-theme.js` are taken from the Cockpit project and are
 LGPL-2.1-or-later; see `debian/copyright`.

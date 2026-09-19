@@ -6,8 +6,8 @@ Files: *
 Copyright: 2026 minsec maintainers
 License: GPL-3+
 
-Files: src/lib/superuser.js
-Copyright: 2020 Red Hat, Inc.
+Files: src/lib/superuser.js src/lib/cockpit-dark-theme.js
+Copyright: 2020-2022 Red Hat, Inc.
 License: LGPL-2.1+
 
 License: GPL-3+
