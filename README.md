@@ -10,6 +10,30 @@ happened — plus the controls to change all of it, and inline guidance drawn
 from minsec's manual pages so the answer is on the page rather than in
 `man minsec.toml`.
 
+## At a glance
+
+Screenshots use invented data on a private test machine.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="screenshots/dark/01-overview.png">
+  <img alt="Overview: service state, live counters, enabled filters and recent bans" src="screenshots/light/01-overview.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="screenshots/dark/03-bans.png">
+  <img alt="Bans: every network the kernel is blocking, which filter caught it and when it unblocks" src="screenshots/light/03-bans.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="screenshots/dark/06-filters-test.png">
+  <img alt="Filters: testing the sshd filter against pasted log lines before enabling it" src="screenshots/light/06-filters-test.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="screenshots/dark/09-multiplayer.png">
+  <img alt="Multiplayer: enrollment state and the size of the crowd blocklist" src="screenshots/light/09-multiplayer.png">
+</picture>
+
 ## What it does
 
 | Page | |
